@@ -1,0 +1,11 @@
+Set-Content -Path "C:\tools\Sysmon\sysmonconfig.xml" -Value @"
+<?xml version="1.0"?>
+<Sysmon schemaversion="4.50">
+  <EventFiltering>
+    <ProcessCreate onmatch="exclude">
+      <Image condition="end with">chrome.exe</Image>
+      <Image condition="end with">msedge.exe</Image>
+    </ProcessCreate>
+  </EventFiltering>
+</Sysmon>
+"@
